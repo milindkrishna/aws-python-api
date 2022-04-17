@@ -1,0 +1,17 @@
+service: aws-python-project
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.8
+  region: ap-south-1
+  stage: dev
+
+functions:
+  milind:
+    handler: myfile.milind
+    events:
+    - http:
+        path: /value
+        method: GET
